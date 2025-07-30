@@ -1,0 +1,120 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Quicksand", sans-serif, "Abril Fatface", "Delius";
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+/* reausable css */
+a{
+  text-decoration: none;
+  color: black;
+}
+
+/* Header Section */
+header{
+  display: flex;
+  margin: 10px 50px 0 150px;
+  justify-content: space-between;
+  background-color: #F9CEDF;
+  padding: 10px 20px 10px 20px;
+  border-radius: 20px;
+  color: #6B6B6B;
+}
+
+.navigations a{
+  color: #6B6B6B;
+  margin-right: 15px;
+  transition: color, ease-in 0.3s;
+}
+
+.navigations a:hover{
+  color: #FFF8F0;
+}
+
+/* Hero Section */
+.hero-section{
+  display: flex;
+  align-items: center;
+  margin-top: 100px;
+  gap: 200px;
+  justify-content: center;
+}
+
+.hero-intoduction{
+  width: 500px;
+  word-wrap: break-word;
+}
+
+.hero-intoduction h1{
+  font-size: 70px;
+  font-family: "Abril Fatface";
+}
+
+.download-cv{
+  margin-top: 15px;
+  background-color: #F9CEDF;
+  border: none;
+  padding: 8px;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: background-color, border, 0.3s ease-in;
+}
+
+.download-cv:hover{
+  background-color: white;
+  border: 2px solid #F9CEDF;
+}
+
+.hero-image{
+  position: relative;
+  background-color: #D988A1;
+  width: 300px;
+  height: 300px;
+  margin-top: 50px;
+}
+.hero-image img{
+  position: absolute;
+  top: -100px;
+  left: 40px;
+}
+.contact-details{
+  position: absolute;
+  background-color: #6B6B6B;
+  color: #FFF8F0;
+  align-items: center;
+  padding-top: 15px;
+  height: 150px;
+  width: 100%;
+  bottom: -40px;
+  left: 0px;
+}
+
+.contact-details p{
+  margin-left: 20px;
+}
+/* About Me */
+.about-me{
+  display: flex;
+  background-color: #D988A1;
+  margin-top: 10px;
+  height: 500px;
+  padding: 30px 100px ;
+}
+
+.about-me table{
+  border-collapse: collapse;
+  width: 300px;
+}
+
+.about-me th, td{
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.course{
+  font-size: 10px;
+}
+
