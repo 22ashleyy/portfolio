@@ -105,8 +105,8 @@ header{
   header{
     position: sticky;
     margin: '10px 20px 0 20px';
-    top: 0;
-    max-width: 300px;
+    top: 20px;
+    max-width: 400px;
   }
 
   .hamburger {
