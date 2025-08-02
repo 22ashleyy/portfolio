@@ -1,9 +1,25 @@
-*{
+:root {
+  --pink:#D988A1;
+  --blush: #F9CEDF;
+  --ivory: #FFF8F0;
+  --gray: #6B6B6B;
+  --radius: 20px;
+}
+*{ 
   margin: 0;
   padding: 0;
   font-family: "Quicksand", sans-serif, "Abril Fatface", "Delius";
   font-optical-sizing: auto;
   font-style: normal;
+  outline: 1px dashed rgba(255,0,0,0.2);
+}
+
+body{
+  background-color: #FFF8F5;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  overflow-x: hidden;
 }
 
 /* reausable css */
@@ -11,110 +27,562 @@ a{
   text-decoration: none;
   color: black;
 }
+h1{
+  font-family: "Abril Fatface";
+}
 
+h2{
+  
+  font-family: "Abril Fatface";
+}
 /* Header Section */
 header{
   display: flex;
-  margin: 10px 50px 0 150px;
+  margin: 10px 100px 0 100px;
   justify-content: space-between;
-  background-color: #F9CEDF;
-  padding: 10px 20px 10px 20px;
+  background-color: var(--blush);
+  padding: 10px 20px;
   border-radius: 20px;
-  color: #6B6B6B;
+  color: var(--gray);
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.navigations{
+  display: flex;
+  gap: 15px;
 }
 
 .navigations a{
-  color: #6B6B6B;
+  color: var(--gray);
   margin-right: 15px;
   transition: color, ease-in 0.3s;
 }
 
 .navigations a:hover{
-  color: #FFF8F0;
+  color: var(--ivory);
 }
 
+/* Hamburger */
+.menu-toggle{
+  display: none;
+}
+.hamburger{
+  cursor: pointer;
+  width: 32px;
+  height: 25px;
+  border-radius: 2px;
+  position: relative;
+  flex-shrink: 0;
+  margin-left: auto;
+  display: none;
+}
+
+.hamburger span{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--gray);
+  border-radius: 2px;
+}
+
+.hamburger span:nth-child(1) {
+  top: 0;
+}
+.hamburger span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.hamburger span:nth-child(3) {
+  bottom: 0;
+}
+
+/* Responsive Mobile */
+@media(max-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+  header{
+    position: sticky;
+    margin: '10px 20px 0 20px';
+    top: 0;
+    max-width: 300px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .navigations{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    background: var(--ivory);
+    flex-direction: column;
+    padding: 1rem 1.25rem;
+    gap: 12px;
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+    display: none;
+    min-width: 180px;
+    z-index: 30;
+  }
+
+  #menu-toggle:checked + .hamburger + .navigations {
+    display: flex;
+  }
+
+  #menu-toggle:checked + .hamburger span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+  #menu-toggle:checked + .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+  #menu-toggle:checked + .hamburger span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+}
 /* Hero Section */
 .hero-section{
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 200px;
   align-items: center;
   margin-top: 100px;
-  gap: 200px;
-  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.hero-intoduction{
-  width: 500px;
+.hero-introduction{
+  width: 100%;
+  max-width: 500px;
   word-wrap: break-word;
+  
 }
 
-.hero-intoduction h1{
-  font-size: 70px;
+.hero-introduction h1{
+  font-size: clamp(2.5rem, 5vw, 70px);
   font-family: "Abril Fatface";
+  margin: 0;
 }
 
+.hero-introduction p{
+  margin-bottom: 1rem;
+}
 .download-cv{
-  margin-top: 15px;
-  background-color: #F9CEDF;
+  background-color: #FADADD;
   border: none;
-  padding: 8px;
+  padding: 8px 16px;
   border-radius: 10px;
   font-weight: bold;
   transition: background-color, border, 0.3s ease-in;
+  cursor: pointer;
 }
 
 .download-cv:hover{
   background-color: white;
-  border: 2px solid #F9CEDF;
+  border: 2px solid var(--blush);
 }
 
-.hero-image{
+.hero-rightitem{
   position: relative;
-  background-color: #D988A1;
+  background-color: var(--pink);
   width: 300px;
   height: 300px;
   margin-top: 50px;
+  z-index: 100;
+  border-radius: 12px;
+  overflow: visible;
 }
-.hero-image img{
+.hero-rightitem img{
   position: absolute;
   top: -100px;
   left: 40px;
+  bottom: 0;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.dob{
+  position: absolute;
+  background-color: var(--blush);
+  padding: 8px;
+  border-radius: 20px;
+  top: 70px;
+  left: -50px;
+  font-size: 0.85rem;
 }
 .contact-details{
   position: absolute;
-  background-color: #6B6B6B;
-  color: #FFF8F0;
+  background-color: #A89CA0;
+  color: var(--ivory);
   align-items: center;
   padding-top: 15px;
   height: 150px;
   width: 100%;
   bottom: -40px;
-  left: 0px;
+  left: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  gap: 4px;
 }
 
 .contact-details p{
-  margin-left: 20px;
+  margin: 4px 0 0 20px;
+  font-size: 1rem;
+}
+
+/* Responsive Mobile */
+@media(max-width: 768px) {
+  .hero-section{
+    gap: 40px;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .hero-introduction{
+    width: 250px;
+  }
+  .hero-introduction h1{
+    font-size: clamp(2rem, 6vw, 50px);
+    text-wrap: nowrap;
+  }
+
+  .download-cv{
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+  }
 }
 /* About Me */
 .about-me{
   display: flex;
-  background-color: #D988A1;
-  margin-top: 10px;
+  flex-direction: row;
+  position: relative;
+  justify-content: center;
+  gap: 220px;
+  background-color: #D9A5B3;
+  font-family: "Abril Fatface";
+  margin: 10px 0 200px;
   height: 500px;
   padding: 30px 100px ;
+  box-sizing: border-box;
+  max-width: 100%;
 }
-
-.about-me table{
+.education-section h1{
+  margin-bottom: 30px;
+  font-size: clamp(2.5rem, 5vh, 40px);
+  font-family: "Abril Fatface";
+}
+.education-section table{
   border-collapse: collapse;
   width: 300px;
 }
 
-.about-me th, td{
+.education-section th, .education-section td{
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
+  font-weight: 400;
 }
 
 .course{
   font-size: 10px;
 }
+@media(max-width: 768px) {
+  .about-me{
+    flex-direction: column;
+    gap: 20px;
+    height: 400px;
+    justify-content: flex-start;
+    margin-bottom: 500px;
+  }
 
+  .education-section h1{
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .education-section table{
+    width: 100%;
+  }
+}
+
+/* Skills Section */
+.skills-section{
+  margin-top: 165px;
+  text-align: left;
+  margin-left: 100px;
+  z-index: 1;
+}
+.skills-section div{
+  margin-bottom: 10px;
+}
+
+.skills-section h1{
+  font-size: clamp(2rem, 5vw, 40px);
+  font-family: "Abril Fatface";
+  flex: 0 0 100%;
+}
+
+.skills-section h3{
+ font-size: 25px;
+ font-weight: 400;
+ text-transform: uppercase;
+ color: var(--ivory);
+}
+
+.coding-languages i{
+  gap: 1rem;
+  font-size: 40px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.icons i:nth-child(1) { /* HTML5 */
+  color: #E44F26;
+}
+
+.icons i:nth-child(2) { /* CSS3 */
+  color: #1572B6;
+}
+
+.icons i:nth-child(3) { /* JavaScript */
+  color: #F7DF1E;
+  filter: drop-shadow(0 0 4px rgba(247, 223, 30, 0.7));
+}
+
+.icons i:nth-child(4) { /* React */
+  color: #61DAFB;
+}
+
+.softwares img{
+  width: 40px;
+
+}
+@media(max-width: 768px) {
+  .skills-section {
+    margin-top: 20px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .skills-section h1{
+    flex: 0 0 100%;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  .skills-section h3{
+    color: black;
+  }
+
+}
+
+.resume{
+  position: absolute;
+  right: 210px;
+  top: -130px;
+  z-index: 1;
+}
+.resume h1{
+  font-size: 5.5em;
+  line-height: 1;
+  opacity: 0.2;
+  text-transform: uppercase;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 0.2px;
+}
+
+@media(max-width: 768px){
+  .resume{
+    display: none;
+  }
+}
+/* Experience section */
+.experience-section{
+  position: absolute;
+  bottom: -200px;
+  background-color: var(--blush);
+  max-width: 600px;
+  left: 200px;
+  padding: 30px;
+}
+
+.timeline{
+  position: relative;
+  margin: 0 auto;
+  padding-left: 40px;
+  max-width: 100%;
+}
+
+.timeline::before{
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--pink), #D9A5B3);
+  border-radius: 2px;
+}
+
+.timeline-item{
+  margin-top: 2rem;
+}
+@media(max-width: 768px) {
+  .experience-section {
+    position: relative;
+    bottom: 0;
+    left: -80px;
+    width: 400px;
+  }
+}
+
+/* Hobbies Section */
+.hobbies-section{
+  width: 100%;
+}
+.hobbies-icon img{
+  width: 40px;
+}
+
+/* My Services Section */
+.my-services{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.my-services h1 , .my-projects h1{
+  font-size:clamp(2rem, 5vw, 40px);
+  font-weight: lighter;
+  margin-bottom: 10px;
+}
+
+.span-item{
+  color: var(--pink);
+  font-family: "Abril Fatface";
+}
+
+.services-card{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0 50px;
+  gap: 20px;
+}
+
+.service-item{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--gray);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color:var(--ivory);
+  height: 300px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+.service-item i{
+  font-size: clamp(70px, 5vw, 50px);
+  text-align: center;
+}
+.service-item h3{
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.service-item p{
+  font-size: 14px;
+}
+
+/* Mobile Responsive */
+@media(max-width: 768px){
+  .my-services{
+    margin-bottom: 20px;
+  }
+
+  .services-card{
+    grid-template-columns: 1fr;
+
+  }
+}
+
+/* Projects Section */
+.my-projects{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.my-projects h2{
+  margin-bottom: 30px;
+  display: block;
+}
+
+.projects-card{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) ;
+  gap: 20px;
+}
+
+.presentation-section .projects-card {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.projects-item{
+  background-color:var(--ivory) ;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.projects-item img{
+  margin-bottom: 10px;
+}
+.projects-item h3{
+  font-weight: bolder;
+}
+
+.projects-item p{
+  font-size: 12px;
+}
+
+.projects-item a{
+  transition: color 0.1s ease-in,text-decoration 0.1s ease-in ;
+}
+.projects-item a:hover{
+  color: var(--pink);
+  text-decoration: underline;
+}
+
+@media (max-width: 768px){
+   .presentation-section .projects-card{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Footer */
+footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(180deg, #D9A5B3, var(--pink) );
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 30px;
+}
+
+.socials a:hover{
+  text-decoration: underline;
+}
