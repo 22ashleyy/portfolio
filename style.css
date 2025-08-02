@@ -117,7 +117,7 @@ header{
   .navigations{
     position: absolute;
     top: 100%;
-    left: 50%;
+    left: 30%;
     background: var(--ivory);
     flex-direction: column;
     padding: 1rem 1.25rem;
@@ -150,7 +150,7 @@ header{
   justify-content: center;
   gap: 200px;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 50px;
   width: 100%;
   box-sizing: border-box;
 }
@@ -311,7 +311,7 @@ header{
   }
 
   .education-section table{
-    width: 100%;
+    margin-left: -50px;
   }
 }
 
@@ -334,7 +334,7 @@ header{
 }
 
 .skills-section h3{
- font-size: clamp(1rem, 3vw, 25px);
+ font-size: clamp(0.7rem, 3vw, 25px);
  font-weight: 500;
  text-transform: uppercase;
  color: var(--ivory);
@@ -373,10 +373,10 @@ header{
     margin-top: 10px;
     position: relative;
     display: flex;
-    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     width: 100%;
-    margin-left: 0;
+    margin-left: -70px;
   }
 
   .skills-section h1{
@@ -387,17 +387,23 @@ header{
   }
   .skills-section h3{
     color: black;
+    white-space: nowrap
   }
 
   .skills-section div{
     display: flex;
-    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .hobbies-icon img{
+    width: 40px;
   }
 }
 
 .resume{
   position: absolute;
-  right: 210px;
+  right: 250px;
   top: -130px;
   z-index: 1;
 }
@@ -420,10 +426,11 @@ header{
 .experience-section{
   position: absolute;
   bottom: -200px;
-  background-color: var(--blush);
+  background-color: white;
   max-width: 600px;
   left: 200px;
   padding: 30px;
+  box-shadow: 0, 4px, 5px rgba(0, 0, 0, 0.1);
 }
 
 .timeline{
@@ -440,7 +447,7 @@ header{
   top: 0;
   bottom: 0;
   width: 4px;
-  background: linear-gradient(180deg, var(--pink), #D9A5B3);
+  background: linear-gradient(180deg, var(--pink), var(--gray));
   border-radius: 2px;
 }
 
