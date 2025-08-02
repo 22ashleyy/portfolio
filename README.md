@@ -1,6 +1,6 @@
 # Personal Portfolio – Hackathon 2025
 
-A personal portfolio website built for the **July 2025 Cohort Hackathon** to showcase my skills, background, projects, and services.  
+A personal portfolio website built for the **July 2025 Cohort Portfolio Hackathon** to showcase my skills, background, projects, and services.  
 Designed with a clean, professional aesthetic and fully responsive for mobile and desktop.
 
 ---
