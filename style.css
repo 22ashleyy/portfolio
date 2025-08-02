@@ -106,7 +106,8 @@ header{
     position: sticky;
     margin: '10px 20px 0 20px';
     top: 20px;
-    max-width: 400px;
+    width: 200px;
+    z-index: 110;
   }
 
   .hamburger {
@@ -211,7 +212,7 @@ header{
   border-radius: 20px;
   top: 70px;
   left: -50px;
-  font-size: 0.85rem;
+  font-size: clamp(0.5rem, 1vw 0.85rem);
 }
 .contact-details{
   position: absolute;
@@ -239,11 +240,11 @@ header{
     gap: 40px;
     justify-content: space-around;
     width: 100%;
-    margin-top: 5px;
+    margin-top: -20px;
   }
 
   .hero-introduction{
-    width: 400px;
+    width: 300px;
   }
   .hero-introduction h1{
     font-size: clamp(2rem, 6vw, 50px);
@@ -254,6 +255,10 @@ header{
     width: 100%;
     text-align: center;
     padding: 12px;
+  }
+
+  .dob{
+    left: -30px;
   }
 }
 /* About Me */
@@ -407,7 +412,7 @@ header{
 
 @media(max-width: 768px){
   .resume{
-    left: 40px;
+    left: 15px;
     top: -300px;
   }
 }
