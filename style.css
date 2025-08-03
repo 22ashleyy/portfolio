@@ -403,7 +403,7 @@ header{
 
 .resume{
   position: absolute;
-  right: 190px;
+  right: 210px;
   top: -130px;
   z-index: 1;
 }
@@ -418,7 +418,7 @@ header{
 
 @media(max-width: 768px){
   .resume{
-    left: 25px;
+    left: 20px;
     top: -300px;
   }
 }
