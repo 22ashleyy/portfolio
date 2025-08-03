@@ -51,7 +51,7 @@ Edit
    ```bash
    git clone https://github.com/22ashleyy/portfolio.git
 Open the project:
-Navigate to the folder and open portfolio.html in your browser.
+Navigate to the folder and open index.html in your browser.
 
 💖 Acknowledgements
 GitHub Pages for free hosting.
