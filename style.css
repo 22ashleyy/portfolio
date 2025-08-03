@@ -531,7 +531,7 @@ header{
 
   .services-card{
     grid-template-columns: 1fr;
-
+    padding: 10px;
   }
 }
 
